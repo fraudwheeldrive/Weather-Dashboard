@@ -22,10 +22,37 @@
   <link rel="stylesheet" href="assets/css/style.css" />
   <title>Work Day Scheduler</title>
 </head>
-</head>
-<body>
-    
 
+<body>
+    <div id ="header" div class="Jumbotron Jumbotron-fluid text-container">
+        <h1 id="title-text" h1 class="title align-items-center"> Weather Dashboard</h1>
+</div>
+<!--main container-->
+<div id ="main-content" class="container">
+    <div class="row">
+
+<!--Left container with search function-->
+    <div id = "left-container" class = col-md-3>
+        <form>
+            <label for="search-city" class="form-label">Search For a City</label>
+            <input type="text" id="search-city" class="form-control" placeholder="Search City">
+        <button id="search-btn" class="btn btn-primary"type="submit"><i class="fas fa-search"></i></button>
+    </div>
+</form>
+    <div id="city-list">
+        <ul id="city-results" class="list-group">
+            <li>placeholder</li>
+        </ul>
+</div>
+
+<!--right main content-->
+<div id="right-container" class="col md-9">
+
+    <div id="city-weather"></div>
+    <div id="5-day"></div>
+  
+    </div>
+</div>  
 
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>

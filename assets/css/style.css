@@ -1,0 +1,28 @@
+:root{
+
+}
+
+
+* {
+    box-sizing: border-box;
+  }
+
+#header {
+    display:flex;
+    justify-content: space-around;
+    background-color:darkgray;
+    color: oldlace;
+    padding: 5px;
+}
+
+
+#search-btn i {
+    width: 15px;
+    display: inline-block;
+
+}
+
+#left-container {
+    display:flex;
+    flex-direction: column;
+}
