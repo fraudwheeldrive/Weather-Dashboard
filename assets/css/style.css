@@ -4,6 +4,8 @@
 
 
 * {
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
   }
 
@@ -15,14 +17,23 @@
     padding: 5px;
 }
 
+#left-container {
+  
+}
+
+form {
+    display:flex;
+    justify-content:flex-start;
+    flex-direction: column;
+}
+
+#search-city {
+    width:100%;
+}
 
 #search-btn i {
     width: 15px;
-    display: inline-block;
+   
+    
 
-}
-
-#left-container {
-    display:flex;
-    flex-direction:column;
 }
