@@ -23,7 +23,7 @@ This App will allow you to search for current weather conditions based on city. 
 
 ## Website location 
 website can be viewed at 
-https://fraudwheeldrive.github.io/work-day-scheduler/
+https://fraudwheeldrive.github.io/Weather-Dashboard/
 ## Github Repository 
 Github Repository can be viewed at 
 https://github.com/fraudwheeldrive/Weather-Dashboard
