@@ -7,9 +7,11 @@ var temp = document.querySelector('.temp');
 var cityPrint = document.querySelector(".city-results")
 var celcius = "metric";
 
-
-
 // get information for user input city
+//API call for weather. 
+var getCurrentWeather = function() {
+ fetch("https://api.openweathermap.org/data/2.5/onecall?lat={33.441792}&lon={94.037689&}&exclude={part}&appid=&{apiKey}")
+}
 
 function citySearch(event) {
   event.preventDefault();
@@ -17,27 +19,23 @@ function citySearch(event) {
   var cityName = inputValue.value;
 
   fetch(`https://api.openweathermap.org/data/2.5/weather?q=${cityName}&units=${celcius}&appid=${apiKey}`)
-  
+
   .then(function(response) { 
     response.json() 
-   
+
     .then(function(data) {
       console.log(data);
-      cityCoord(city,data);
+      //cityCoord(city,data);
     });
 
  //need error handling
   });
 };
 
-function cityCoord ()
+//getCurrentWeather()
+//function cityCoord ()
+button.addEventListener("click", citySearch)
 
-// get weather data for city 
-//button.addEventListener("click", function(){
-  
-
-
-button.addEventListener("click", citySearch);
 
 
  //var long 
@@ -52,4 +50,4 @@ button.addEventListener("click", citySearch);
 // 
 
 
-//getCurrentWeather();
+//getCurrentWeather()
