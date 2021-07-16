@@ -19,44 +19,57 @@
     href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap"
     rel="stylesheet"
   />
-  <link rel="stylesheet" href="assets/css/style.css" />
-  <title>Work Day Scheduler</title>
+    <link 
+    rel="stylesheet" 
+    href="./assets/css/style.css"
+    />
 </head>
-
 <body>
-    <div id ="header" div class="Jumbotron Jumbotron-fluid text-container">
-        <h1 id="title-text" h1 class="title align-items-center"> Weather Dashboard</h1>
-</div>
-<!--main container-->
-<div id ="main-content" class="container">
-    <div class="row">
+    <header>
+        <div>
+            <div>
+                <h1> Weather Dashboard</h1>
+            </div>
+        </div>
+    </header>
+    <main>
+        <div>
+            <div>
+                <div>
+                    <div>
+                        <h2> Search your City</h2>
+                    </div>
+                    <div>
+                        <div class="input-group mb-3">
+                            <input type="text" class="form-control search" id="city-search" placeholder= "city" aria-label="City Name" aria-describedby="search-button"/>
+                            <button class="btn btn-primary" type="button" id="search-button"></button><i class="fas fa=search"></i><button>
+                        </div>
+                    </div>
+                    <div id="clear-history">
+                        <button class="btn btn-primary" id="clear-button"> Clear History </button>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <div>
+                    <div>
+                        <h3> Current Weather</h3>
+                    </div>
+                </div class="row current-weather">
+            </div>
+        </div>
+        <div class="container m-1 border rounded">
+            <div class="row m-1">
+                <h3>5-Day-Forecast:</h3>
+            </div>
+            <div class="row forecast-container">
+                
+            </div>
+        </div>
+    </main>
 
-<!--Left container with search function-->
-    <div id = "left-container" class = col-md-3>
-        <form>
-            <label for="search-city" class="form-label">Search For a City</label>
-            <input type="text" id="search-city" class="form-control" placeholder="Search City">
-        <button id="search-btn" class="btn btn-primary"type="submit"><i class="fas fa-search"></i></button>
-</form>
-    <div id="city-list">
-        <ul id="city-results" class="list-group"></ul>
-            <li>placeholder</li>
-        </ul>
-</div>
-</div>
-
-<!--right main content-->
-<div id="right-container" class="col md-9">
-
-    <div id="city-weather"> test </div>
-    <div id="5-day"> test </div>
-  
-    </div>
-</div>  
-
+    <script src="https://unpkg.com/dayjs@1.8.21/dayjs.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-    <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
-    <script src="assets/javascript/script.js"></script>
+    <script src="./assets/js/script.js"></script>    
 </body>
 </html>
