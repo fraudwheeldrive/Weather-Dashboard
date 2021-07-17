@@ -26,38 +26,44 @@
 </head>
 <body>
     <header>
-        <div>
-            <div>
-                <h1> Weather Dashboard</h1>
+        <div class="bg-light">
+            <div class="container-fluid">
+                <h1 id="header"> Weather Dashboard</h1>
             </div>
         </div>
     </header>
-    <main>
-        <div>
-            <div>
-                <div>
-                    <div>
+    <main class="container-fluid">
+        <div class="row">
+            <div class ="col-sm-4">
+                <div class="container m-1 bg-light">
+                    <div class="row m-1">
                         <h2> Search your City</h2>
                     </div>
-                    <div>
+                    <div class="row m-1">
                         <div class="input-group mb-3">
-                            <input type="text" class="form-control search" id="city-search" placeholder= "city" aria-label="City Name" aria-describedby="search-button"/>
+                            <input type="text" class="form-control search" id="city-search" placeholder= "city" aria-label="City Name" aria-described by="search-button"/>
                             <button class="btn btn-primary" type="button" id="search-button"></button><i class="fas fa=search"></i><button>
                         </div>
+                    </div>
+                    <div id="error-display"></div>
+                    <div class="row search-history">
+
                     </div>
                     <div id="clear-history">
                         <button class="btn btn-primary" id="clear-button"> Clear History </button>
                     </div>
                 </div>
             </div>
-            <div>
-                <div>
-                    <div>
+            <div class="col-sm-8">
+                <div class="container m-1 border rounded">
+                    <div class ="row m-1">
                         <h3> Current Weather</h3>
-                    </div>
-                </div class="row current-weather">
+                                </div>
+                <div class="row current-weather">
+            
+                </div>
             </div>
-        </div>
+        
         <div class="container m-1 border rounded">
             <div class="row m-1">
                 <h3>5-Day-Forecast:</h3>
@@ -66,6 +72,9 @@
 
             </div>
         </div>
+</div>
+</div>
+
     </main>
 
     <script src="https://unpkg.com/dayjs@1.8.21/dayjs.min.js"></script>
