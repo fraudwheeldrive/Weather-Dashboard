@@ -58,29 +58,24 @@ function geoCoord(location, geoData) {
 }
 
 //display the weather.
-function weatherDetails (city,info) {
+function weatherDetails(city, info) {
+  var unixTimeStamp = info.current.dt;
+  var currentDate = dayjs.unix(unixTimeStamp).format("DD/MM/YYYY");
+  console.log(currentDate);
 
-    var unixTimeStamp =info.current.dt;
-    var currentDate = dayjs.unix(unixTimeStamp).format("DD/MM/YYYY")
-    console.log(currentDate);
+  var uvIndex = info.current.uv;
 
-    var uvIndex = info.current.uv;
+  $("current-weather").append(`<div class="row name-image"></div>`);
 
-    $("current-weather").append(
-
-        `<div class="row name-image"></div>`
-    )
-
-    $(".name-image"). append (
-
-        `
+  $(".name-image").append(
+    `
         <h4>${city}</h4>
         <img src="http://openweathermap.org/img/wn/${info.current.weather[0].icon}@2x.png>
         `
-    )
+  );
 
-    $(".current-weather").append(
-        `
+  $(".current-weather").append(
+    `
         <div class="container m-1 border rounded border-dark ">
         <h3> Current Weather</h3>
         <li>Date: ${currentDate} </li>
@@ -90,49 +85,44 @@ function weatherDetails (city,info) {
         <li>UV Index: ${uvIndex}</li>
         </div>`
 
-        // <span id= "uv-color">/span> need to get working 
-  
-        
-    )
+    // <span id= "uv-color">/span> need to get working
+  );
 
-    // make uv color
-    uvColor (uvIndex);
+  // make uv color
+  uvColor(uvIndex);
 }
 
-    // switch colours dependant on weather conditions 
+// switch colours dependant on weather conditions
 
-    function uvColor(index){
-        console.log("index",index);
-        if (index>=0 && index<=3){
-            $("#uv-color").attr("class","favorable");
-        } else if (index>3 && index <=7){
-            $("#uv-color").attr("class","moderate")
-        } else {
-            $("#uv-color").attr("class","severe")
-        }
+function uvColor(index){
+    console.log("index",index);
+    if (index>=0 && index<=3){
+        $("#uv-color").attr("class","favorable");
+    } else if (index>3 && index <=7){
+        $("#uv-color").attr("class","moderate")
+    } else {
+        $("#uv-color").attr("class","severe")
     }
+}
 
-    // 5 day forecast
+// 5 day forecast
 
-    function fiveDay (city, info){
-
-        for(var i=1;i<6;i++){
-    
-
+function fiveDay(city, info) {
+  for (var i = 1; i < 6; i++) {
     var unixTime = info.daily[i].dt;
-    var dailyDate = dayjs.unix(unixTime).format("DD/MM/YYYY")
-    var dailyIcon = info.daily[i].weather[0].icon
+    var dailyDate = dayjs.unix(unixTime).format("DD/MM/YYYY");
+    var dailyIcon = info.daily[i].weather[0].icon;
     var dailyTemp = info.daily[i].temp.day;
     var windSpeed = info.daily[i].wind_speed;
     var dailyHumidity = info.daily[i].humidity;
 
-    // create 5 day html element 
+    // create 5 day html element
     $(".forecast-container").append(
       `
       <div class="col-sm-2 daily-container border rounded border-dark ${i}"></div>
 
       `
-    )
+    );
 
     //
     $(`.${i}`).append(
@@ -144,11 +134,10 @@ function weatherDetails (city,info) {
       <p>Humidity: ${dailyHumidity} </p>
       
       `
-    )
-
-    }
+    );
   }
+}
 
-    // local storage 
+// local storage
 
-    // event listeners 
+// event listeners for clear history/ local stoarage

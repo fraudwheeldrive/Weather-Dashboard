@@ -45,6 +45,7 @@ a {
   margin: 40px;
 }
 
+not working for uv colour 
 #uv-color {
   display: inline-block;
   width: 50px;
@@ -63,3 +64,4 @@ a {
 .severe {
   background-color: tomato;
 }
+
