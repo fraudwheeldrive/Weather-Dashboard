@@ -1,64 +1,65 @@
- body {
+body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace; 
+main {
+  margin: 0 auto;
+  max-width: 90%;
+  padding: 30px 30px 30px 30px;
+  background-color: var(--secondary);
+}
 
- 
+:root {
+  --primary: #392759;
+  --secondary: #c7f5de;
+  --tertiary: #81171b;
+  --light: #f4f1f9;
+  --dark: #323432;
+  --darker: #0a0a0a;
+  --error: rgb(228, 46, 1);
+  --spacing-one: calc(1rem * 0.5);
+  --spacing-two: calc(1rem);
+  --spacing-five: calc(2.5rem);
+}
 
- main {
-    margin: 0 auto;
-    max-width: 90%;
-    padding: 50px 30px;
-  }
-  
-   :root {
-    --primary: #392759;
-    --secondary: #858786;
-    --tertiary: #81171B;
-    --light: #F4F1F9;
-    --dark: #323432;
-    --darker: #0A0A0A;
-    --error: rgb(228, 46, 1);
-    --spacing-one: calc(1rem * 0.5);
-    --spacing-two: calc(1rem);
-    --spacing-five: calc(2.5rem);
-  }
-  
-  * {
-    box-sizing: border-box;
-  }
+* {
+  box-sizing: border-box;
+}
 
-  .current-weather {
-      display: flex;
-      flex-direction: row;
-      margin: 10px,
-  }
+a {
+  text-decoration: none;
+  color:var(--light)
+}
 
-  #uv-color{
-      display: inline-block;
-      width: 50px;
-      height: 30px;
-      border-radius: 13%;
-      text-align: center;
-      padding-right: 3px;
+.clear-button {
+  color:var(--light)
+}
+.current-weather {
+  display: flex;
+  flex-direction: row;
+  margin: 40px;
+}
 
-  }
+#uv-color {
+  display: inline-block;
+  width: 50px;
+  height: 30px;
+  border-radius: 13%;
+  text-align: center;
+  padding-right: 3px;
+}
 
-  .favourable{
-      background-color:aquamarine;
-  }
-  .moderate{
-      background-color:goldenrod;
-  }
-  .severe{
-      background-color:tomato;
-  }
-
+.favorable {
+  background-color: aquamarine;
+}
+.moderate {
+  background-color: goldenrod;
+}
+.severe {
+  background-color: tomato;
+}

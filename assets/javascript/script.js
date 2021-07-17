@@ -81,13 +81,17 @@ function weatherDetails (city,info) {
 
     $(".current-weather").append(
         `
+        <div class="container m-1 border rounded border-dark ">
+        <h3> Current Weather</h3>
         <li>Date: ${currentDate} </li>
         <li>Temperature: ${info.current.temp}&#8451</li>
         <li>Humidity: ${info.current.humidity}%</li>
         <li>Wind Speed: ${info.current.wind_speed} MPH</li>
-        <li>UV Index:${uvIndex}</li>`
+        <li>UV Index: ${uvIndex}</li>
+        </div>`
 
-        // <span id= "uv-color">/span>
+        // <span id= "uv-color">/span> need to get working 
+  
         
     )
 
@@ -100,7 +104,7 @@ function weatherDetails (city,info) {
     function uvColor(index){
         console.log("index",index);
         if (index>=0 && index<=3){
-            $("#uv-color").attr("class","favourable");
+            $("#uv-color").attr("class","favorable");
         } else if (index>3 && index <=7){
             $("#uv-color").attr("class","moderate")
         } else {
@@ -112,8 +116,38 @@ function weatherDetails (city,info) {
 
     function fiveDay (city, info){
 
-        for(var i=1;i<6;i++){}
+        for(var i=1;i<6;i++){
+    
+
+    var unixTime = info.daily[i].dt;
+    var dailyDate = dayjs.unix(unixTime).format("DD/MM/YYYY")
+    var dailyIcon = info.daily[i].weather[0].icon
+    var dailyTemp = info.daily[i].temp.day;
+    var windSpeed = info.daily[i].wind_speed;
+    var dailyHumidity = info.daily[i].humidity;
+
+    // create 5 day html element 
+    $(".forecast-container").append(
+      `
+      <div class="col-sm-2 daily-container border rounded border-dark ${i}"></div>
+
+      `
+    )
+
+    //
+    $(`.${i}`).append(
+      `
+         <h7>${dailyDate}</h7>
+      <img src=http://openweathermap.org/img/wn/${dailyIcon}@2x.png>
+      <p>Temp: ${dailyTemp}&#8451</p>
+      <p>Wind:${windSpeed}MPH</p>
+      <p>Humidity: ${dailyHumidity} </p>
+      
+      `
+    )
+
     }
+  }
 
     // local storage 
 
